@@ -1,4 +1,4 @@
-package pack2
+package pack2;
 class  B
 {
 	public static void main(String[] args) 
