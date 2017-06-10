@@ -1,4 +1,4 @@
-class HelloWorld 
+class satya
 {
 	public static void main(String[] args) 
 	{
