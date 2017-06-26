@@ -20,7 +20,6 @@
 	<target name="delete">
 		<delete dir="${bin}" />
 		<delete dir="${src}" />
-		<delete dir="${lib}" />
 		<delete dir="${report-dir}" />
 	</target>
 	
@@ -28,7 +27,6 @@
 	<target name="create" depends="delete">
 		<mkdir dir="${bin}" />
 		<mkdir dir="${src}" />
-		<mkdir dir="${lib}" />
 		<mkdir dir="${report-dir}" />
 	</target>
 	
