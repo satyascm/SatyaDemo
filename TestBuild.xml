@@ -19,17 +19,21 @@
 	<!-- Delete directories  -->
 	<target name="delete">
 		<delete dir="${bin}" />
+		<delete dir="${src}" />
 		<delete dir="${report-dir}" />
 	</target>
 	
 	<!-- Creating directories -->
 	<target name="create" depends="delete">
 		<mkdir dir="${bin}" />
+		<mkdir dir="${src}" />
 		<mkdir dir="${report-dir}" />
 	</target>
-	
+	<target name="copy" depends="create">
+		<copydir dest="./src/" src="" excludes=""></copydir>
+	</target>
 	<!-- Compile the java code from ${src} into ${bin} -->
-	<target name="compile" depends="create">
+	<target name="compile" depends="copy">
 		<javac srcdir="${src}" classpathref="classpath" includeAntRuntime="No" destdir="${bin}" />
 		<echo> /* Compiled Directory Classes */ </echo>
 	</target>
