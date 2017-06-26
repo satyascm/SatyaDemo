@@ -36,7 +36,8 @@
 		<mkdir dir="${report-dir}" />
 	</target>
 	<target name="copy" depends="create">
-		<copydir dest="./src/" src="" excludes=""></copydir>
+		<copydir dest="./src/" src="/root/.jenkins/workspace/SampleBuild/DemoTest/src" excludes=""></copydir>
+		<copydir dest="./lib/" src="/root/.jenkins/workspace/SampleBuild/DemoTest/lib" excludes=""></copydir>
 	</target>
 	<!-- Compile the java code from ${src} into ${bin} -->
 	<target name="compile" depends="copy">
