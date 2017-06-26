@@ -3,7 +3,11 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
+<<<<<<< HEAD
       <class name="com.jenkins.DemoJenkins"/>
+=======
+      <class name="./bin/DemoJenkins"/>
+>>>>>>> 64767d46ff735a4ab6453f06d84e6fe437f22645
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
