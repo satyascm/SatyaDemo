@@ -15,6 +15,13 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                expression { BRANCH_NAME ==~ /(production|staging)/ }
+                anyOf {
+                    environment name: 'DEPLOY_TO', value: 'production'
+                    environment name: 'DEPLOY_TO', value: 'staging'
+                }
+            }
             steps {
                 echo 'Deploying....'
             }
@@ -26,11 +33,6 @@ pipeline {
         }
        success {
                 echo 'This will run only if successful..'
-                // Output it to the console:
-                //echo "STARTED BY USER = ${STARTED_BY}"
-                // refine this to just the user name:
-                //export JUST_NAME="`echo "${STARTED_BY}" | sed "s@Started by user@@"`"
-                //echo "Hello ${BUILD_USER},Build Successfull..for more info check $BUILD_URL"
                 mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay,our Jenkins build passed."
        }
        failure {
