@@ -9,6 +9,10 @@ pipeline {
                 sh 'ant run'
             }
         }
+        post {
+        failure {
+            mail to: satyapriya48@gmail.com, subject: 'The Pipeline failed :('
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
