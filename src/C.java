@@ -1,6 +1,6 @@
 class C 
 {
-	public static void main(String[] args) 
+	///public static void main(String[] args) 
 	{
 		int i = 0,j;
 		j = i++   +   i    +   i++    + i;
