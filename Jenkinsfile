@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 checkout scm
-                sh 'ant build'
+                sh 'ant run'
             }
         }
         stage('Test') {
