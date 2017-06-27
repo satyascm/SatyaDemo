@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
                 checkout scm
                 sh 'ant build'
             }
