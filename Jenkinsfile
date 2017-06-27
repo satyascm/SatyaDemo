@@ -27,7 +27,7 @@ pipeline {
        success {
                 echo 'This will run only if successful..'
                 // Output it to the console:
-                echo "STARTED BY USER = ${STARTED_BY}"
+                //echo "STARTED BY USER = ${STARTED_BY}"
                 // refine this to just the user name:
                 //export JUST_NAME="`echo "${STARTED_BY}" | sed "s@Started by user@@"`"
                 echo "Hello ${BUILD_USER},Build Successfull..for more info check $BUILD_URL"
