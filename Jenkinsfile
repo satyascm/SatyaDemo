@@ -13,6 +13,7 @@ pipeline {
         failure {
             mail to: satyapriya48@gmail.com, subject: 'The Pipeline failed :('
         }
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
