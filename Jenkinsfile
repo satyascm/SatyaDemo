@@ -25,14 +25,16 @@ pipeline {
         }
         success {
             echo 'This will run only if successful..'
-            # Output it to the console:
+            // Output it to the console:
             echo "STARTED BY USER = ${STARTED_BY}"
-            # refine this to just the user name:
+            // refine this to just the user name:
             export JUST_NAME="`echo "${STARTED_BY}" | sed "s@Started by user@@"`"
             echo "Hello ${JUST_NAME},Build Successfull..for more info check $BUILD_URL"
+            mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay,our Jenkins build passed."
         }
         failure {
             echo 'This will run only if failed..'
+            mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Ohh no,our Jenkins build failed."
         }
         unstable {
             echo 'This will run only if the run was marked as unstable..'
