@@ -39,11 +39,11 @@ pipeline {
         }
        success {
                 echo 'This will run only if successful..'
-                mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",color: 'GOOD'
+                mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
        }
        failure {
                 echo 'This will run only if failed..'
-                mail to: "satyapriya.das@cognizant.com", subject:"Failed Pipeline: ${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}",color: 'RED'
+                mail to: "satyapriya.das@cognizant.com", subject:"Failed Pipeline: ${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}"
            
        }
        unstable {
