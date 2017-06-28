@@ -49,7 +49,7 @@ pipeline {
         }
     }
     post {
-        Sanity check{
+        Sanitycheck{
          echo 'Are we ready to proceed for prod deployment:please provide your approval'
          mail to: "satyapriya.das@cognizant.com", subject:"Need your approval: Running ${env.BUILD_ID} on ${env.JENKINS_URL}", body: "Dear Sir,Please login to the build and give your approval,if want to proceed with prod Deployment  ${env.JENKINS_URL}/${env.BUILD_ID}"    
         }
