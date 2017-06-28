@@ -19,24 +19,20 @@ pipeline {
             steps {
                  echo 'Deploying....to Dev'
             }
-        }
-        stage('Sanity check') {
-            steps {
+             steps {
                 input "Does the DEV environment look ok?"
             }
         }
-        stage('Deploy - QA') {
+       stage('Deploy - QA') {
             steps {
                  echo 'Deploying....to QA'
-            }
-        }
-
-        stage('Sanity check') {
-            steps {
+            } 
+           steps {
                 input "Does the QA environment look ok?"
             }
         }
-         stage('Deploy - Staging') {
+
+       /*stage('Deploy - Staging') {
             steps {
                  echo 'Deploying....to Staging'
             }
@@ -50,7 +46,7 @@ pipeline {
             steps {
               echo 'Deploying....to Production'
             }
-        }
+        }*/
     }
     post {
        always {
