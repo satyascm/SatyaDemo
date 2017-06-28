@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Sanity check') {
             steps {
-                echo "hello world" | mail -s "Running ${env.BUILD_ID} on ${env.JENKINS_URL}" "satyapriya.das@cognizant.com"
+                mail -s "Running ${env.BUILD_ID} on ${env.BUILD_URL}" "satyapriya.das@cognizant.com"
                 input "Does the staging environment look ok?"
                 //sh 'echo "Dear Sir,Please login to the build and give your approval,if want to proceed with prod Deployment  ${env.JENKINS_URL}/${env.BUILD_ID}" | mailx -r "dipuliki@gmail.com" -s "Need your approval: Running ${env.BUILD_ID} on ${env.JENKINS_URL}" "satyapriya.das@cognizant.com"'
             }
