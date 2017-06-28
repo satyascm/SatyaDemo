@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    input 'Are we Ready to go? Proceed or Abort'
 
     stages {
         stage('Build') {
