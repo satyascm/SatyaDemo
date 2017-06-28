@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Sanity check') {
             steps {
-                input "Does the staging environment look ok?"
+                input "Does the DEV environment look ok?"
             }
         }
         stage('Deploy - QA') {
@@ -33,7 +33,7 @@ pipeline {
 
         stage('Sanity check') {
             steps {
-                input "Does the staging environment look ok?"
+                input "Does the QA environment look ok?"
             }
         }
          stage('Deploy - Staging') {
