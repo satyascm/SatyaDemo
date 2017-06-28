@@ -29,7 +29,7 @@ pipeline {
 
         stage('Deploy - Production') {
             steps {
-              echo 'Deploying....to staging'
+              echo 'Deploying....to Production'
             }
         }
     }
@@ -39,11 +39,12 @@ pipeline {
         }
        success {
                 echo 'This will run only if successful..'
-                mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay,our Jenkins build passed."
+                mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "The pipeline ${currentBuild.fullDisplayName} completed successfully.",color: 'GOOD'
        }
        failure {
                 echo 'This will run only if failed..'
-                mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Ohh no,our Jenkins build failed."
+                mail to: "satyapriya.das@cognizant.com", subject:"Failed Pipeline: ${currentBuild.fullDisplayName}" body: "Something is wrong with ${env.BUILD_URL}",color: 'RED'
+           
        }
        unstable {
                 echo 'This will run only if the run was marked as unstable..'
