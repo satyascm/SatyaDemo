@@ -1,15 +1,6 @@
 pipeline {
     agent any
-    stage 'promotion'
-    def userInput = input(
-    id: 'userInput', message: 'Let\'s promote?', parameters: [
-    [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env']
-    ])
-    echo ("Env: "+userInput)
-    //input 'Are we Ready to go? Proceed or Abort'
-    //parameters {
-     //   string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-    //}
+    
     stages {
         stage('Build') {
             steps {
