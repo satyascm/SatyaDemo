@@ -1,11 +1,20 @@
 pipeline {
     agent any
-    input 'Are we Ready to go? Proceed or Abort'
-
+    stage 'promotion'
+    def userInput = input(
+    id: 'userInput', message: 'Let\'s promote?', parameters: [
+    [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env']
+    ])
+    echo ("Env: "+userInput)
+    //input 'Are we Ready to go? Proceed or Abort'
+    //parameters {
+     //   string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    //}
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 checkout scm
                 sh 'ant run'
             }
