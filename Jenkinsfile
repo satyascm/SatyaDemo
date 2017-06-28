@@ -15,7 +15,7 @@ pipeline {
                 echo 'Testing..'
             }
         }
-         stage('Deploy - DEV') {
+       /*  stage('Deploy - DEV') {
             steps {
                  echo 'Deploying....to Dev'
             }
@@ -30,9 +30,9 @@ pipeline {
            steps {
                 input "Does the QA environment look ok?"
             }
-        }
+        }*/
 
-       /*stage('Deploy - Staging') {
+       stage('Deploy - Staging') {
             steps {
                  echo 'Deploying....to Staging'
             }
@@ -46,7 +46,7 @@ pipeline {
             steps {
               echo 'Deploying....to Production'
             }
-        }*/
+        }
     }
     post {
        always {
