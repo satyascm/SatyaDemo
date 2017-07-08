@@ -37,7 +37,7 @@ pipeline {
                  echo 'Deploying....to Staging'
             }
         }
-        stage('Sanity check')timeout(time :7,unit :'DAYS') {
+        stage('Sanity check'){
             steps {
               // echo "Need your approval:Running ${env.BUILD_ID} on ${env.BUILD_URL}"| mailx -s "Need your approval on ${env.BUILD_URL}" @ "satyapriya.das@cognizant.com"
                 input "Does the staging environment look ok?",submitter:'satya'
