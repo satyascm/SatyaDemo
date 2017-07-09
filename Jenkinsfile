@@ -10,7 +10,7 @@ pipeline {
                 sh 'ant run'
                 sh '$ echo "hello world" | mail -s "Build job complted Successfully" satyapriya.das@cognizant.com'
                 $ echo "hello world" | mail -s "Build job complted Successfully" satyapriya.das@cognizant.com;
-                mail to: "satyapriya.das@cognizant.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "The pipeline ${currentBuild.fullDisplayName} completed successfully.";
+                
             }
         }
         stage('Test') {
