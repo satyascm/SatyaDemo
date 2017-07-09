@@ -9,7 +9,7 @@ pipeline {
                 checkout scm
                 sh 'ant run'
                 sh '$ echo "hello world" | mail -s "Build job complted Successfully" satyapriya.das@cognizant.com'
-                $ echo "hello world" | mail -s "Build job complted Successfully" satyapriya.das@cognizant.com;
+                
                 
             }
         }
