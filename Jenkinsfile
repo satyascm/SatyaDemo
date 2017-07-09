@@ -8,7 +8,7 @@ pipeline {
                  echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 checkout scm
                 sh 'ant run'
-                sh ./mail.sh
+                ./mail.sh
                }
         }
         stage('Test') {
@@ -40,9 +40,7 @@ pipeline {
         }
         stage('Sanity check'){
             steps {
-              // echo "Need your approval:Running ${env.BUILD_ID} on ${env.BUILD_URL}"| mailx -s "Need your approval on ${env.BUILD_URL}" @ "satyapriya.das@cognizant.com"
                 input "Does the staging environment look ok?"
-                //sh 'echo "Dear Sir,Please login to the build and give your approval,if want to proceed with prod Deployment  ${env.JENKINS_URL}/${env.BUILD_ID}" | mailx -r "dipuliki@gmail.com" -s "Need your approval: Running ${env.BUILD_ID} on ${env.JENKINS_URL}" "satyapriya.das@cognizant.com"'
             }
         }
         stage('Deploy - Production'){
