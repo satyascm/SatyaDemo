@@ -8,7 +8,7 @@ pipeline {
                  echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 checkout scm
                 sh 'ant run'
-                sh '$ echo "hello world" | mail -s "Build job complted Successfully" satyapriya.das@cognizant.com'
+                
                 
                 
             }
