@@ -5,8 +5,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
  
-public class&amp;nbsp; internetExplorer_Driver {
- 
+public class&amp;nbsp; internetExplorer_Driver 
+{
 
 @Test
 public void ieDriver() throws InterruptedException {
