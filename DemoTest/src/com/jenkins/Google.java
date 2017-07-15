@@ -3,12 +3,11 @@ package com.jenkins;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.Test;
+
  
 public class&amp;nbsp; internetExplorer_Driver 
 {
 
-@Test
 public void ieDriver() throws InterruptedException {
  
 //set system property, so that we can access IE driver
