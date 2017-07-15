@@ -1,6 +1,6 @@
 <project name="Sample Test build" basedir=".">
 	
-	<message>set global properties for build</message>
+	
 	
 	<property name="basedir" value="." />
 	<property name="lib" value="${basedir}/lib" />
