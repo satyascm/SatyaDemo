@@ -1,6 +1,7 @@
 <project name="Sample Test build" basedir=".">
-	<!-- ========== Initialize Properties =================================== -->
-	<!-- set global properties for build -->
+	
+	<message>set global properties for build</message>
+	
 	<property name="basedir" value="." />
 	<property name="lib" value="${basedir}/lib" />
 	<property name="src" value="${basedir}/src" />
