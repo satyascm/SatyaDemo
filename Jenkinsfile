@@ -22,8 +22,7 @@ pipeline {
             }
         }
         stage('Sanity check')
-        notify ("deploy to staging?")
-        {
+                {
             steps {
                 input "Does the staging environment look ok?"
             }
