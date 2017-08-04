@@ -15,23 +15,7 @@ pipeline {
                 echo 'Testing..'
             }
         }
-       /*  stage('Deploy - DEV') {
-            steps {
-                 echo 'Deploying....to Dev'
-            }
-             steps {
-                input "Does the DEV environment look ok?"
-            }
-        }
-       stage('Deploy - QA') {
-            steps {
-                 echo 'Deploying....to QA'
-            } 
-           steps {
-                input "Does the QA environment look ok?"
-            }
-        }*/
-
+     
        stage('Deploy - Staging') {
             steps {
                  echo 'Deploying....to Staging'
@@ -39,8 +23,9 @@ pipeline {
         }
         stage('Sanity check'){
             steps {
-                input "Does the staging environment look ok?"
+               notify("Deploy to Production?")
             }
+            input "Does the staging environment look ok?"
         }
         stage('Deploy - Production'){
             steps {
