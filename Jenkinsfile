@@ -24,8 +24,9 @@ pipeline {
         stage('Sanity check'){
             steps {
                notify("Deploy to Production?")
+               input "Does the staging environment look ok?"
             }
-            input "Does the staging environment look ok?"
+           
         }
         stage('Deploy - Production'){
             steps {
