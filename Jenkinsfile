@@ -21,10 +21,11 @@ pipeline {
                  echo 'Deploying....to Staging'
             }
         }
-        stage('Sanity check'){
+        stage('Sanity check')
+        notify ("deploy to staging?")
+        {
             steps {
-               notify("Deploy to Production?")
-               input "Does the staging environment look ok?"
+                input "Does the staging environment look ok?"
             }
            
         }
